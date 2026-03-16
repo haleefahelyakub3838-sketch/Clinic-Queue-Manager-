@@ -9,3 +9,4 @@ class Patient:
     
     def get_info(self):  # custom behavior method
         return f"{self.name} ({self.age}yrs) - {self.condition} [{self.time_registered}]"
+# Integrated datetime for precise patient check-in tracking
