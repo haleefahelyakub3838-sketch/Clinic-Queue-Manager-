@@ -40,3 +40,5 @@ if __name__ == '__main__':
 # Data Structure: collections.deque for O(1) time complexity
 
 # Flash messaging logic placeholder
+
+# Refactored route handlers for cleaner logic
