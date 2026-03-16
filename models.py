@@ -12,3 +12,5 @@ class Patient:
 # Integrated datetime for precise patient check-in tracking
 
 # Encapsulation: Private-like attributes for data integrity
+
+    def __repr__(self): return f'<Patient {self.name}>'
