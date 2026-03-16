@@ -37,3 +37,4 @@ def serve():
 
 if __name__ == '__main__':
     app.run(debug=True)
+# Data Structure: collections.deque for O(1) time complexity
