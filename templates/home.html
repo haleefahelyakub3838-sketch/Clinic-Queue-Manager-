@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>MAUUN Clinic Queue</title>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-emerald-50 min-h-screen font-sans">
+  <div class="max-w-2xl mx-auto p-6">
+    <h1 class="text-4xl font-bold text-emerald-700 text-center mb-2">🏥 MAUUN Health Clinic</h1>
+    <p class="text-center text-gray-600 mb-8">Live Queue Manager</p>
+
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <p class="text-2xl font-semibold text-emerald-600">{{ total }} waiting</p>
+        </div>
+        <div class="text-right">
+          <p class="text-lg font-medium text-gray-500">Seen today</p>
+          <p class="text-3xl font-bold text-emerald-700">{{ seen }}</p>
+        </div>
+      </div>
+
+      <h2 class="text-xl font-semibold mb-4 text-gray-800">Current Queue (First come, first served)</h2>
+      {% if queue %}
+        <ul class="space-y-3">
+          {% for p in queue %}
+            <li class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-xl flex items-center">
+              <span class="text-2xl mr-4">👤</span>
+              <span class="font-medium">{{ p.get_info() }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-center py-12 text-gray-400 text-xl">✅ No patients waiting</p>
+      {% endif %}
+
+      <div class="mt-10 flex gap-4">
+        <a href="/add" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-4 rounded-2xl font-semibold text-lg transition">+ Add New Patient</a>
+        <a href="/serve" class="flex-1 bg-red-600 hover:bg-red-700 text-white text-center py-4 rounded-2xl font-semibold text-lg transition">Call Next Patient →</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

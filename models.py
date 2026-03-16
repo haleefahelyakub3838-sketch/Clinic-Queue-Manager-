@@ -1,0 +1,11 @@
+from datetime import datetime
+
+class Patient:
+    def __init__(self, name, age, condition):
+        self.name = name.strip()
+        self.age = int(age)
+        self.condition = condition.strip()
+        self.time_registered = datetime.now().strftime("%I:%M %p")
+    
+    def get_info(self):  # custom behavior method
+        return f"{self.name} ({self.age}yrs) - {self.condition} [{self.time_registered}]"
